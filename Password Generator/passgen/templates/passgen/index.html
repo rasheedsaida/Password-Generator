@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Generate Your Password</h1>
+    <hr>
+    <form method="post" action="{% url 'password' %}">
+        {% csrf_token %}
+        <label for="letters">How many letters do you want</label>
+        <input type="number" id="letters" name="letters"><br/>
+
+        <label for="numbers">How many numbers do you want</label>
+        <input type="number" id="numbers" name="numbers"><br/>
+
+        <label for="symbols">How many symbols do you want</label>
+        <input type="number" id="symbols" name="symbols"><br/>
+
+        <button type="submit">Generate Password</button>
+    </form>
+</body>
+</html>
